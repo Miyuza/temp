@@ -1,0 +1,51 @@
+﻿@model List<WorkFlowManagement.Models.Application>
+@using WorkFlowManagement.Models;
+<style>
+    h1 {
+    font-size: 2em;
+    color: #000;
+    color:darkgrey;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+</style>
+
+
+@{
+    Layout = null;
+    ViewBag.Title = "User1";
+}
+
+<h1 class="site-title">&#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 Workflow Management</h1>
+     <form style="float:right;margin-right:20cm" action="/Home/Index" method="post">
+    <input type="submit" value="Log Out"/>
+</form>
+<h2>&#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 @Session["Uname"]</h2>
+
+<table border="1" id="tblAssigned" style="margin-left:30px;text-align:left">
+    <thead>
+        <tr>
+            <th>Application ID</th>
+            <th>Form Type</th>
+            <th>Application Status</th>
+            <th>Workflow Status</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        
+        @{
+            List<Application> st = DBManager.getWorkFlowApplications((int)Session["UID"]);
+            foreach(var a in st)
+            {
+                <tr>
+                    <td>@a.App_ID</td>
+                    <td>@a.CreatedOn</td>
+                    <td>@DBManager.getStatus(a.Status)</td> 
+                    <td>@DBManager.getStatus(a.CreatedBY)</td>
+                    <td><a href="~/Home/ViewForm/@a.App_ID">View</a></td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

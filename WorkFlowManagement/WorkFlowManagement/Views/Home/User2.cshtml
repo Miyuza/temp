@@ -1,0 +1,67 @@
+﻿<style>
+    h1 {
+    font-size: 2em;
+    color: #000;
+    color:darkgrey;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+</style>
+@{
+    Layout = null;
+    ViewBag.Title = "Student";
+}
+@using WorkFlowManagement.Models;
+<h1 class="site-title">&#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 Workflow Management</h1>
+<h2>&#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 @Session["Uname"]</h2>
+<form style="float:right;margin-right:17cm" action="/Home/Index" method="post">
+    <input type="submit" value="Log Out"/>
+</form>
+
+
+<table border="1" id="tblAssigned" style="margin-left:30px;text-align:left">
+    <thead>
+        <tr>
+            <th>Application ID</th>
+            <th>Form Type</th>
+            <th>Application Status</th>
+            <th>Created On</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        
+        @{
+            List<Application> st = DBManager.getUserCreatedApplications((int)Session["UID"]);
+            foreach(var a in st)
+            {
+                <tr>
+                    <td>@a.App_ID</td>
+                    <td>@DBManager.getFormName(a.Form_ID)</td>
+                    <td>@DBManager.getStatus(a.Status)</td> 
+                    <td>@a.CreatedOn</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+
+
+
+<h3 style="margin-left:5cm">Create an Application</h3>
+<br />
+<br />
+<form action="/Home/Form" method="post" style="margin-left:5cm">
+    <select name="formName">
+        @{
+            List<String> str = DBManager.getForms();
+            foreach(var a in str)
+            {
+                <option>@a</option>
+            }
+        } 
+    </select>
+    <input type="submit" value="Create" />
+</form>
+

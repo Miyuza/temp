@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="WorkFlow_ManagementEntities">
+    <EntitySetMapping Name="Applications">
+      <EntityTypeMapping TypeName="Model.Application">
+        <MappingFragment StoreEntitySet="Application">
+          <ScalarProperty Name="App_ID" ColumnName="App_ID" />
+          <ScalarProperty Name="Form_ID" ColumnName="Form_ID" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Forms">
+      <EntityTypeMapping TypeName="Model.Form">
+        <MappingFragment StoreEntitySet="Form">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Form_Approver">
+      <EntityTypeMapping TypeName="Model.Form_Approver">
+        <MappingFragment StoreEntitySet="Form_Approver">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Form_ID" ColumnName="Form_ID" />
+          <ScalarProperty Name="Approver_ID" ColumnName="Approver_ID" />
+          <ScalarProperty Name="ApprovalOrder" ColumnName="ApprovalOrder" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Requests">
+      <EntityTypeMapping TypeName="Model.Request">
+        <MappingFragment StoreEntitySet="Request">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RequestBy" ColumnName="RequestBy" />
+          <ScalarProperty Name="RName" ColumnName="RName" />
+          <ScalarProperty Name="RCNIC" ColumnName="RCNIC" />
+          <ScalarProperty Name="RRoll_No" ColumnName="RRoll_No" />
+          <ScalarProperty Name="RSemester" ColumnName="RSemester" />
+          <ScalarProperty Name="REmail" ColumnName="REmail" />
+          <ScalarProperty Name="RAddress" ColumnName="RAddress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="Model.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="User_Type" ColumnName="User_Type" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkFlows">
+      <EntityTypeMapping TypeName="Model.WorkFlow">
+        <MappingFragment StoreEntitySet="WorkFlow">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="App_ID" ColumnName="App_ID" />
+          <ScalarProperty Name="Approver_ID" ColumnName="Approver_ID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ApprovalOrder" ColumnName="ApprovalOrder" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

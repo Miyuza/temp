@@ -1,0 +1,80 @@
+﻿@model List<WorkFlowManagement.Models.WorkFlow>
+@using WorkFlowManagement.Models;
+<style>
+    h1 {
+    font-size: 2em;
+    color: #000;
+    color:darkgrey;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+</style>
+<script>
+    function f1() {
+        window.location.href = "/Home/SubmitStatus/"+@ViewBag.id +"";
+    }
+    function f2() {
+        window.location.href = "/Home/SubmitStatus1/"+@ViewBag.id + "";
+    }
+</script>
+@{
+    Layout = null;
+}
+
+<h1 class="site-title">&#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 Workflow Management</h1>
+<h2 style="margin-left:5cm">Form Details</h2>
+<br />
+
+@{
+    Request q = new Request();
+    q = DBManager.getRequest(ViewBag.id);
+}
+<div style="margin-left:5cm">
+<p>Form Created By @DBManager.getUserName(q.RequestBy)</p>
+    <p>Name : @q.RName</p>
+    <p>CNIC : @q.RCNIC</p>
+    <p>Form Type : @DBManager.getFormName(DBManager.getFormNumFromApp(ViewBag.id))</p>
+    <p>Roll_No : @q.RRoll_No</p>
+    <p>Semester : @q.RSemester</p>
+    <p>Email : @q.REmail</p>
+    <p>Address : @q.RAddress</p>
+</div>
+<br /><br />
+<table border="1" id="tblAssigned" style="margin-left:3cm;text-align:left">
+    <thead>
+        <tr>
+            <th>Approver Name</th>
+            <th>Status</th>
+            <th>Approval Order</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        @{
+            for(int i = 0;i < Model.Count;i++)
+            {
+                <tr>
+                    <td>@DBManager.getUserName(Model[i].Approver_ID)</td>
+                    <td>@DBManager.getStatus(Model[i].Status)</td>
+                    <td>@Model[i].ApprovalOrder</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+<br />
+<br />
+<div style="margin-left:3cm">
+@{
+    if (ViewBag.status == 2)
+    {
+        <input type="button" value="Accept" onclick="f1()" />         
+        <input type="button" value="Reject" onclick="f2()" />   
+    }
+    <br />
+    if(ViewBag.appStatus == 3 || ViewBag.appStatus == 4)
+    {
+        <a href="~/Home/Delete/@ViewBag.id">Delete</a>
+    }
+}
+</div>

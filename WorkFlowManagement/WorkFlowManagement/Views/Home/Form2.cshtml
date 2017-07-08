@@ -1,0 +1,61 @@
+﻿
+<div class="content-wrapper">
+    <h2>@ViewBag.Title</h2>
+<form action="/Home/FormSubmitted" method="post">
+    <input type="text" name="fname" value="@ViewBag.Title" hidden="hidden" /><br />
+    <h3><u>Student Information</u></h3>
+    <div style="margin-left: 1cm">
+        <span style="font-size: 13pt">Name :</span>
+        <input type="text" value="@ViewBag.RName" name="RName" />&#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160
+    <span style="font-size: 13pt">Roll No : </span>
+        <input type="text" value="@ViewBag.RRoll_No" name="RR0ll_No" /><br />
+        <span style="font-size: 13pt">CNIC : </span>
+        <input type="text" value="@ViewBag.RCNIC" name="RCNIC" />&#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160
+    <span style="font-size: 13pt">Contact Number : </span>
+        <input type="text" value="" /><br />
+        <span style="font-size: 13pt">Signature : </span>
+        <input type="text" value="" />&#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160
+    <span style="font-size: 13pt">Email : </span>
+        <input type="email" value="@ViewBag.REmail" name="REmail" /><br />
+        <span style="font-size: 13pt">Address : </span>
+        <input type="text" value="@ViewBag.RAddress" name="RAddress" /> &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160
+        <span style="font-size: 13pt">Semester : </span>
+        <input type="text" value="@ViewBag.RSemester" name="RSemester" /><br />
+        <span style="font-size: 13pt">Year Of Enrollement : </span>
+        <input type="text" value="" />
+        
+        
+    </div>
+    <h3><u>Request Information</u></h3>
+    <div style="margin-left: 1cm">
+        <p><i>I would like to Request Following:</i></p>
+        <span style="font-size:13pt">Confirmation of Enrollment :&#160 &#160 &#160 <i>Fall</i> </span>
+        <input type="checkbox" value="@ViewBag.RFall1" name="RFall1"/>
+         <span style="font-size:13pt"><i>Spring</i></span><input type="checkbox" value="@ViewBag.RFall2" name="RFall2"/>
+        <br />
+        <span style="font-size:13pt">Eligibility to Continue Studies :&#160 &#160 &#160 <i>Fall</i> </span>
+        <input type="checkbox" />
+        <span style="font-size:13pt">&#160 &#160 &#160 &#160 <i>Spring</i> </span><input type="checkbox" />
+        <span style="font-size:13pt">&#160 &#160 &#160 Year : </span><input type="text" value="" />
+        <br />
+        <span style="font-size:13pt">Eligibility to Graduate :&#160 &#160 &#160 <i>Fall Ceremony</i> </span>
+        <input type="checkbox" />
+        <span style="font-size:13pt">&#160 &#160 &#160 &#160 <i>Spring Ceremony</i>  </span><input type="checkbox" />
+        <br /><br />
+        <span style="font-size:13pt">Confirmation of Graduation : </span>
+        <input type="checkbox" /><br /><br />
+        <span style="font-size:13pt">Transcript Evaluation : </span>
+        <input type="checkbox" /><br /><br />
+        <span style="font-size:13pt">Duplicate / Replacement Diploma : </span>
+        <input type="checkbox" /><br /><br />
+        <span style="font-size:13pt">Clerification of Transfer Credit : </span>
+        <input type="checkbox" /><br /><br />
+        <span style="font-size:13pt">Other (Please provide comment / detail) : </span>
+        <input type="checkbox" /><br /><br />
+        <textarea></textarea>
+        <br />
+        </div>
+
+    <input type="submit" value="Submit" />
+</form>
+    </div>

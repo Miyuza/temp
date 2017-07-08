@@ -1,0 +1,62 @@
+﻿
+<div class="content-wrapper">
+    <h2>@ViewBag.Title</h2>
+    <form action="/Home/FormSubmitted" method="post">
+        @{
+            if(ViewBag.Fill == 1)
+            {
+                <br /><br />
+                <span style="color:red;font-size:14pt">Fill out the Essentials</span>
+                <br />
+            }
+        }
+        <input type="text" name="fname" value="@ViewBag.Title" hidden="hidden" /><br />
+        <span style="font-size:13pt">Student Name :</span>
+        <input type="text" value="@ViewBag.RName" name="RName" /><br />
+        <span style="font-size:13pt">Roll No : </span>
+        <input type="text" value="@ViewBag.RRoll_No" name="RRoll_No" /><br />
+        <span style="font-size:13pt">Semester : </span>
+        <input type="text" value="@ViewBag.RSemester" name="RSemester" />&#160 &#160 &#160 &#160
+        <span style="font-size:13pt"> Fall </span>
+        <input type="checkbox" name="RFall1" value="@ViewBag.RFall1" />&#160 &#160 &#160
+        <span style="font-size:13pt"> Fall </span>
+        <input type="checkbox" name="RFall2" value="@ViewBag.RFall2" /><br />
+        <span style="font-size:13pt">CGPA : </span>
+        <input type="text" value="" /><br />
+        <span style="font-size:13pt">CNIC : </span>
+        <input type="text" value="@ViewBag.RCNIC" name="RCNIC" /><br />
+        <span style="font-size:13pt">Credit Hours Completed : </span>
+        <input type="text" value="" /><br />
+        <span style="font-size:13pt">Year Of Enrollment : </span>
+        <input type="text" value="" /><br />
+        <span style="font-size:13pt">Contact No : </span>
+        <input type="text" value=""  /><br />
+        <span style="font-size:13pt">Email : </span>
+        <input type="email" value="@ViewBag.REmail" name="REmail" /><br />
+        <span style="font-size:13pt">Address : </span>
+        <input type="text" value="@ViewBag.RAddress" name="RAddress" /><br />
+        <span style="font-size:13pt">Date : </span>
+        <input type="text" value="" /><br />
+        <span style="font-size:13pt"><b>Clearance Required For : </b></span><br /><br />
+        <span style="font-size:13pt">Final Transcript</span>
+        <input type="checkbox" />
+        <span style="font-size:13pt">&#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 Interschool Program Change</span>
+        <input type="checkbox" /><br />
+        <span style="font-size:13pt">Semester Leave</span>
+        <input type="checkbox" />
+        <span style="font-size:13pt">&#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160Leaving University</span>
+        <input type="checkbox" /><br /><br /><br />
+
+
+        <span style="font-size:13pt"><b><u>Name Of Department</u></b></span>&#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160
+        <span style="font-size:13pt"><b><u>Signature and stamp</u></b></span><br /><br />
+        <span style="font-size:13pt"><b>Office of Controller Examination</b></span>&#160 &#160 &#160 &#160<input type="text" value="" /><br />
+        <span style="font-size:13pt"><b>Library</b></span>&#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 <input type="text" value="" /><br />
+        <span style="font-size:13pt"><b>Labs</b></span>&#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160&#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 <input type="text" value="" /><br />
+        <span style="font-size:13pt"><b>Office of Info Processing Center</b></span>&#160 &#160 &#160 &#160<input type="text" value="" /><br />
+        <span style="font-size:13pt"><b>Office of Registrar</b></span>&#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160 &#160<input type="text" value="" /><br />
+        
+
+        <input type="submit" value="Submit" />
+    </form>
+</div>

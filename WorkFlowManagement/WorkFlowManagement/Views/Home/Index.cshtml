@@ -1,0 +1,25 @@
+﻿
+<div>
+    <br />
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h2>Login Page</h2>
+            </hgroup>
+            <form method="post" action="/Home/CheckUser">
+                <label>Login : </label><input name="login" type="text" />
+                <label>Password : </label><input name="pass" type="password" />
+                <br />
+                <input type="submit" value="Login" />
+            </form>
+        </div>
+    </section>
+    <section class="content-wrapper main-content clear-fix">
+        @{if((int)Session["Awe"] == 1)
+          {
+              <div>Invalid Login or Password</div>
+          }
+        }
+        
+    </section>
+</div>
